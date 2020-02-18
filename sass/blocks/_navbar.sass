@@ -1,0 +1,110 @@
+.navbar
+  position: fixed
+  z-index: 10
+  width: 100%
+  top: 0
+  left: 0
+  background: #ffffff
+  &-wrap
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &__mobile, &__landline
+    text-align: right
+  &__phone
+    font-size: 19px
+    display: block
+    margin-bottom: 5px
+    +bold
+    color: $text-color
+    text-decoration: none
+  &__work-time, &__email
+    display: block
+    font-size: 14px
+    color: $text-color-light
+    text-decoration: none
+
+.menu
+  position: fixed
+  // z-index: -1
+  top: 80px
+  left: 0
+  width: 100%
+  padding: 16px 0
+  background: $primaty
+  transition: 0.2s
+  transform: translateY(-200%)
+  opacity: 0
+  &_active
+    transform: translateY(0%)
+    opacity: 1
+  &__link
+    font-size: 17px
+    text-decoration: none
+    text-transform: uppercase
+    color: #ffffff
+  &__nav
+    display: flex
+    align-items: center
+    justify-content: space-around  
+  &-button
+   display: flex
+   flex-direction: column
+   justify-content: center
+   align-items: center
+   background: transparent
+   border: none
+   border-right: 1px solid rgba(#510bba, 0.1)
+   border-left: 1px solid rgba(#510bba, 0.1)
+   width: 70px
+   height: 80px
+   &:focus
+     outline: none
+   &:hover
+    cursor: pointer
+  &-button__line
+      display: block
+      background: #89a9eb
+      width: 20px
+      height: 3px
+      margin: 2px 0
+
+.logo
+  &__text
+    display: block
+    font-size: 18px
+    margin-bottom: 5px
+    text-transform: uppercase
+    +bold
+  &__description
+    font-size: 14px
+    display: block
+    color: $text-color-light
+@media (max-width: 1024px)
+  .menu
+    &__link
+      font-size: 14px
+      
+@media (max-width: 991px)
+  .menu
+    &__link
+      font-size: 11px
+  .navbar
+    &__mobile, &__landline
+      display: none
+@media (max-width: 576px)
+  .navbar__button
+    display: none
+  .logo
+    padding: 2px
+    text-align: center
+    &__text
+      font-size: 16px
+  .menu
+    top: 60px
+    &__nav
+      flex-direction: column
+    &__link
+      margin-bottom: 20px
+    &-button
+      height: 60px
